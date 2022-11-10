@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import ProductCard from "./ProductCard";
 
-const Products = ({ limit }) => {
+const Products = ({ limit, col }) => {
   console.log(limit);
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -16,7 +16,9 @@ const Products = ({ limit }) => {
       .then((data) => setProducts(data));
   }, [limit]);
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-3 mx-auto gap-3">
+    <div
+      className={`w-full grid grid-cols-1 md:grid-cols-${col} mx-auto gap-3`}
+    >
       {products.map((product) => (
         <ProductCard key={product._id} product={product} />
       ))}

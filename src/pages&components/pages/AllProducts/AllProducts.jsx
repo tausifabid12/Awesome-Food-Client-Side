@@ -18,7 +18,7 @@ const AllProducts = () => {
         <h4 className="text-5xl text-white font-bold"> All Products</h4>
       </div>
       <div className="my-20">
-        <ProductCard />
+        <ProductCard col={3} />
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ const HomeMenu = () => {
         </h2>
       </div>
 
-      <Products limit="3" />
+      <Products limit="3" col={3} />
 
       <Link to="/allProducts">
         <button

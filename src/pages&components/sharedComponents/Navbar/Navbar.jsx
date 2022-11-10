@@ -1,8 +1,16 @@
 import React, { useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {})
+      .catch((err) => {});
+  };
   const navLinks = (
     <>
       <li>
@@ -25,35 +33,59 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          to="/"
+          to="/login"
           title="Product pricing"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-lime-500"
         >
-          Pricing
+          Log in
         </Link>
       </li>
       <li>
         <Link
-          to="/"
-          title="About us"
+          to="/signUp"
+          title="sign up"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-lime-500"
         >
-          About us
+          Sign up
         </Link>
       </li>
     </>
   );
   const navButtons = (
     <>
-      <li>
-        <Link
-          to="/"
-          className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-600 hover:bg-lime-500 focus:shadow-outline focus:outline-none"
-          title="Sign up"
-        >
-          Sign up
-        </Link>
-      </li>
+      {user?.email ? (
+        <li>
+          <Link
+            onClick={handleLogOut}
+            to="/login"
+            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-600 hover:bg-lime-500 focus:shadow-outline focus:outline-none"
+            title="Sign up"
+          >
+            Log Out
+          </Link>
+        </li>
+      ) : (
+        <>
+          <li>
+            <Link
+              to="/login"
+              title="Product pricing"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-lime-500"
+            >
+              Log in
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/signUp"
+              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-600 hover:bg-lime-500 focus:shadow-outline focus:outline-none"
+              title="Sign up"
+            >
+              Sign up
+            </Link>
+          </li>
+        </>
+      )}
     </>
   );
   return (
