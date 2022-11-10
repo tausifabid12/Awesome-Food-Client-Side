@@ -7,15 +7,41 @@ import { toast } from "react-toastify";
 
 const ProductsDetail = () => {
   const productDetail = useLoaderData();
-  const { title, price, img, dec } = productDetail[0];
+  const { title, price, img, dec, _id } = productDetail[0];
   const [isReviewForm, setIsReviewForm] = useState(false);
   const { user } = useContext(AuthContext);
 
+  // adding reviews to database
   const handleReviewSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const form = e.target;
     const review = form.review.value;
-    console.log(review, form);
+    const rating = form.rating.value;
+    const email = user?.email;
+
+    if (parseInt(rating) > 5) {
+      toast.error("you have to rate this product out of 5", {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      return;
+    }
+
+    fetch("http://localhost:5000/review", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ email, review, rating, _id }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   const handleReviewClick = () => {
@@ -53,7 +79,6 @@ const ProductsDetail = () => {
           <div className="flex justify-between font-bold w-4/5 mx-auto py-5">
             <h3>Total Reviews: </h3>
             <button
-              type="submit"
               onClick={handleReviewClick}
               className="bg-lime-500 py-2 px-5 rounded-md text-white"
             >
@@ -87,7 +112,12 @@ const ProductsDetail = () => {
                   onSubmit={handleReviewSubmit}
                   className="flex flex-col w-full"
                 >
-                  <input type="text" className="text-3xl" />
+                  <input
+                    type="number"
+                    name="rating"
+                    placeholder="Rate this product out of 5"
+                    className=" py-4 px-4 rounded-lg bg-[#f3f5ed] mb-4"
+                  />
                   <textarea
                     rows="3"
                     name="review"
@@ -95,7 +125,7 @@ const ProductsDetail = () => {
                     className="p-4 rounded-md resize-none bg-[#f3f5ed] text-gray-900 border-1 border-gray-900"
                   ></textarea>
                   <button
-                    type="button"
+                    type="submit"
                     className="py-4 my-8 font-semibold rounded-md text-gray-900 bg-lime-500"
                   >
                     Leave feedback
