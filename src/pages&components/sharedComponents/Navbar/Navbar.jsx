@@ -7,25 +7,25 @@ const Navbar = () => {
     <>
       <li>
         <Link
-          href="/"
-          title="Our product"
+          to="/"
+          title="Home"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-lime-500"
         >
-          Product
+          Home
         </Link>
       </li>
       <li>
         <Link
-          href="/"
-          title="Our product"
+          to="/allProducts"
+          title="Products"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-lime-500"
         >
-          Features
+          Products
         </Link>
       </li>
       <li>
         <Link
-          href="/"
+          to="/"
           title="Product pricing"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-lime-500"
         >
@@ -34,7 +34,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          href="/"
+          to="/"
           title="About us"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-lime-500"
         >
@@ -47,7 +47,7 @@ const Navbar = () => {
     <>
       <li>
         <Link
-          href="/"
+          to="/"
           className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-600 hover:bg-lime-500 focus:shadow-outline focus:outline-none"
           title="Sign up"
         >
@@ -59,7 +59,7 @@ const Navbar = () => {
   return (
     <header className="px-4 py-5  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="relative flex items-center justify-between">
-        <Link href="/" title="Company" className="inline-flex items-center">
+        <Link to="/" title="Company" className="inline-flex items-center">
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">
             Awesome Food
           </span>
@@ -93,7 +93,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link
-                      href="/"
+                      to="/"
                       title="Company"
                       className="inline-flex items-center"
                     >
