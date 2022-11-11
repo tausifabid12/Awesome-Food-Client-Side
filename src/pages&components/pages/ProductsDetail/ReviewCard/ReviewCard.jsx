@@ -1,10 +1,8 @@
 import React from "react";
-import { useContext } from "react";
-import { AuthContext } from "../../../../contexts/AuthProvider";
 
 const ReviewCard = ({ rev }) => {
   const { rating, review, email, photoUrl } = rev;
-  const { user } = useContext(AuthContext);
+
   return (
     <div className="container mb-10 flex flex-col h-auto w-4/5 p-6 mx-auto divide-y rounded-md divide-gray-700 shadow-md  text-gray-900">
       <div className="flex justify-between p-4">

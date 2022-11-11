@@ -33,20 +33,20 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          to="/login"
+          to="/myReviews"
           title="Product pricing"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-lime-500"
         >
-          Log in
+          My Reviews
         </Link>
       </li>
       <li>
         <Link
-          to="/signUp"
+          to="/addProducts"
           title="sign up"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-lime-500"
         >
-          Sign up
+          Add Products
         </Link>
       </li>
     </>
