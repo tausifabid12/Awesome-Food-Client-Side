@@ -25,7 +25,7 @@ const ProductsDetail = () => {
     const photoUrl = user?.photoURL;
     const productId = _id;
 
-    if (parseInt(rating) > 5) {
+    if (parseFloat(rating) > 5) {
       toast.error("you have to rate this product out of 5", {
         position: "top-center",
         autoClose: 4000,
