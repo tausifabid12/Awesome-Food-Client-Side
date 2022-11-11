@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 // import { FaAngleRight } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
@@ -7,11 +9,16 @@ const ProductCard = ({ product }) => {
   return (
     <div className="flex flex-col w-full md:w-11/12 mx-auto p-2 space-y-6 overflow-hidden rounded-lg shadow-md text-gray-900 text-center bg-[#f3f5ed]">
       <div>
-        <img
-          src={img}
-          alt=""
-          className="object-cover w-full mb-4 h-60 sm:h-96  rounded-lg"
-        />
+        <PhotoProvider>
+          <PhotoView src={img}>
+            <img
+              src={img}
+              alt=""
+              className="object-cover w-full mb-4 h-60 sm:h-96  rounded-lg"
+            />
+          </PhotoView>
+        </PhotoProvider>
+
         <h2 className="mb-1 text-2xl font-bold">{title}</h2>
         <p className="text-sm text-gray-800">
           {dec.length > 100 ? dec.slice(0, 100) : dec + "...."}{" "}
