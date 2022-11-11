@@ -39,7 +39,7 @@ const ProductsDetail = () => {
       return;
     }
 
-    fetch("http://localhost:5000/review", {
+    fetch("https://awesome-food-server.vercel.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -87,7 +87,7 @@ const ProductsDetail = () => {
   //getting review data
 
   useEffect(() => {
-    fetch(`http://localhost:5000/review/${_id}`)
+    fetch(`https://awesome-food-server.vercel.app/review/${_id}`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);

@@ -12,7 +12,9 @@ const MyReviews = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userReview?email=${user?.email}`)
+    fetch(
+      `https://awesome-food-server.vercel.app/userReview?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

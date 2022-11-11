@@ -7,7 +7,7 @@ const Products = ({ limit, col }) => {
   console.log(limit);
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products", {
+    fetch("https://awesome-food-server.vercel.app/products", {
       headers: {
         limit: limit,
       },

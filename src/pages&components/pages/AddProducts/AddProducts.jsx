@@ -16,7 +16,7 @@ const AddProducts = () => {
     const title = form.title.value;
 
     const data = { title, img, ratings, cat, price, dec };
-    fetch("http://localhost:5000/products", {
+    fetch("https://awesome-food-server.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

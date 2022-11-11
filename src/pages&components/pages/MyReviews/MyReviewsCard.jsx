@@ -13,7 +13,7 @@ const MyReviewsCard = ({ myReview, refresh, setRefresh }) => {
   const { rating, review, productId, _id } = myReview;
   //   /productsDetails/:id
   useEffect(() => {
-    fetch(`http://localhost:5000/productsDetails/${productId}`)
+    fetch(`https://awesome-food-server.vercel.app/productsDetails/${productId}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data[0]);
@@ -26,7 +26,7 @@ const MyReviewsCard = ({ myReview, refresh, setRefresh }) => {
     if (!ans) {
       return;
     }
-    fetch(`http://localhost:5000/userReview/${_id}`, {
+    fetch(`https://awesome-food-server.vercel.app/userReview/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -53,7 +53,7 @@ const MyReviewsCard = ({ myReview, refresh, setRefresh }) => {
     const rating = form.rating.value;
     const review = form.review.value;
 
-    fetch(`http://localhost:5000/userReview/${_id}`, {
+    fetch(`https://awesome-food-server.vercel.app/userReview/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
