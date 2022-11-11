@@ -2,7 +2,7 @@
 
 ## This is food delivery and review website
 
-live site link : [Awesome food review](https://github.com/facebook/create-react-app).
+live site link : [Awesome food review](https://awesome-food-23f92.web.app/).
 
 ## Features OF Awesome Food
 
