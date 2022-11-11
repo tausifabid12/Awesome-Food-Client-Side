@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
         />
         <h2 className="mb-1 text-2xl font-bold">{title}</h2>
         <p className="text-sm text-gray-800">
-          {dec.slice(0, 100) + "...."}{" "}
+          {dec.length > 100 ? dec.slice(0, 100) : dec + "...."}{" "}
           {
             <Link
               to={`/productsDetails/${_id}`}

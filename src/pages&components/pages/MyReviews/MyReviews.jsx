@@ -34,16 +34,22 @@ const MyReviews = () => {
         <h4 className="text-5xl text-white font-bold"> My Reviews</h4>
       </div>
 
-      <div>
-        {myReviews.map((myReview) => (
-          <MyReviewsCard
-            key={myReview._id}
-            myReview={myReview}
-            refresh={refresh}
-            setRefresh={setRefresh}
-          />
-        ))}
-      </div>
+      {myReviews.length === 0 ? (
+        <div className="h-80 w-full text-gray-700 text-7xl font-bold flex items-center justify-center">
+          No Review Added !!!!!
+        </div>
+      ) : (
+        <div>
+          {myReviews.map((myReview) => (
+            <MyReviewsCard
+              key={myReview._id}
+              myReview={myReview}
+              refresh={refresh}
+              setRefresh={setRefresh}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

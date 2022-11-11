@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="px-4 divide-y bg-gray-800 text-gray-100">
+    <footer className="px-4 divide-y  text-gray-900">
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <Link
@@ -11,7 +11,7 @@ const Footer = () => {
             href="#"
             className="flex justify-center space-x-3 lg:justify-start"
           >
-            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-violet-400">
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-lime-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"
@@ -22,7 +22,7 @@ const Footer = () => {
               </svg>
             </div>
             <span className="self-center text-2xl font-semibold">
-              Brand name
+              Awesome Food
             </span>
           </Link>
         </div>
@@ -139,7 +139,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-6 text-sm text-center text-gray-400">
-        © 1968 Company Co. All rights reserved.
+        © All rights reserved to Awesome Food.
       </div>
     </footer>
   );

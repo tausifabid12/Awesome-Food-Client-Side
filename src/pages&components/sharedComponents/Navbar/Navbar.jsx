@@ -31,7 +31,7 @@ const Navbar = () => {
           Products
         </Link>
       </li>
-      <li>
+      <li className={user?.email ? "block" : "hidden"}>
         <Link
           to="/myReviews"
           title="Product pricing"
@@ -43,10 +43,19 @@ const Navbar = () => {
       <li>
         <Link
           to="/addProducts"
-          title="sign up"
+          title="addProducts"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-lime-500"
         >
           Add Products
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/blogs"
+          title="/blogs"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-lime-500"
+        >
+          Blogs
         </Link>
       </li>
     </>
