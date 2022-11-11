@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="container h-screen mx-auto flex flex-col items-center px-4 py-16 text-center md:py-32 md:px-10 lg:px-32 xl:max-w-3xl">
         <h1 className="text-4xl font-bold leading-none sm:text-5xl">
           Awesome
-          <span className="text-lime-500"> Healthy Food</span> Delivery
+          <span className="text-lime-500"> Healthy Food</span> Review
         </h1>
         <p className="px-8 mt-8 mb-12 text-lg">
           Get the best deal of town and enjoy the glory.
@@ -27,6 +27,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
+      {console.log(process.env.REACT_APP_apiKey)}
     </section>
   );
 };
