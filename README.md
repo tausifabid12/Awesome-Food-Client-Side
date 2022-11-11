@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Welcome to Awesome food review
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## This is food delivery and review website
+
+live site link : [Awesome food review](https://github.com/facebook/create-react-app).
+
+## Features OF Awesome Food
+
+- firebase Authentication
+- Private Routes
+- Mobile Friendly or Responsive Design
+- Easy navigation
+- A strong and visible call to action.
 
 ## Available Scripts
 
